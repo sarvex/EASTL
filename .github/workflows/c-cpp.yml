@@ -58,7 +58,7 @@ jobs:
     
     steps:
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v2.1.0
+        uses: actions/download-artifact@v2.1.1
         with:
           name: Code
           path: Code/
@@ -96,7 +96,7 @@ jobs:
     
     steps:
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v2.1.0
+        uses: actions/download-artifact@v2.1.1
         with:
           name: Binaries-${{ matrix.os }}-${{ matrix.compiler }}-${{ matrix.configuration }}
           path: Binaries/
@@ -124,7 +124,7 @@ jobs:
 
     steps:
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v2.1.0
+        uses: actions/download-artifact@v2.1.1
         with:
           name: Binaries-${{ matrix.os }}-${{ matrix.compiler }}-${{ matrix.configuration }}
           path: Binaries/
