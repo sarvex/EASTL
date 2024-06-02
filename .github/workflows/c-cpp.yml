@@ -16,7 +16,7 @@ jobs:
           path: EASTL/
       - run: cd EASTL/ && git submodule update --init
       - name: Upload checked out code
-        uses: actions/upload-artifact@v2.3.1
+        uses: actions/upload-artifact@v4.3.3
         with:
           name: Code
           path: EASTL/
@@ -58,7 +58,7 @@ jobs:
     
     steps:
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v2.1.0
+        uses: actions/download-artifact@v4.1.7
         with:
           name: Code
           path: Code/
@@ -71,7 +71,7 @@ jobs:
           CC: ${{ matrix.cc }}
       - run: cd build && cmake --build . --config ${{ matrix.configuration }}
       - name: Upload binaries
-        uses: actions/upload-artifact@v2.3.1
+        uses: actions/upload-artifact@v4.3.3
         with:
           name: Binaries-${{ matrix.os }}-${{ matrix.compiler }}-${{ matrix.configuration }}
           path: build/
@@ -96,7 +96,7 @@ jobs:
     
     steps:
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v2.1.0
+        uses: actions/download-artifact@v4.1.7
         with:
           name: Binaries-${{ matrix.os }}-${{ matrix.compiler }}-${{ matrix.configuration }}
           path: Binaries/
@@ -124,7 +124,7 @@ jobs:
 
     steps:
       - name: Download a Build Artifact
-        uses: actions/download-artifact@v2.1.0
+        uses: actions/download-artifact@v4.1.7
         with:
           name: Binaries-${{ matrix.os }}-${{ matrix.compiler }}-${{ matrix.configuration }}
           path: Binaries/
